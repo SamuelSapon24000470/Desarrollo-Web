@@ -1,0 +1,39 @@
+$primary: #bdf8d4;
+$secondary: #cecef3;
+
+.card {
+    position: relative;
+    margin: auto;
+    background-color: $primary;
+    width: 85%;
+    margin-top: 35px;
+    color: black;
+    border-radius: 25px;
+    border: none;
+}
+
+.Button {
+    background-color: $secondary;
+    color: black;
+    border-radius: 25px;
+    border: none;
+    width: 95%;
+    
+}
+
+.text1 {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    position: relative;
+    text-align: center;
+}
+
+.text2 {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+    position: relative;
+    text-align: center;
+}

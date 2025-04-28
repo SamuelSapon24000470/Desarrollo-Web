@@ -1,0 +1,40 @@
+.form{
+    margin-top: 10%;
+    margin-right: 20%;
+    position: relative;
+    text-align: center;
+    
+    margin: auto;
+}
+
+.text{
+    display: block;
+    position: relative;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.input{
+    background-color: rgb(187, 183, 183);
+    border-radius: 0px;
+    color: #000;
+    
+}
+.inputD{
+    background-color: rgb(187, 183, 183);
+    border-radius: 0px;
+    color: #000;
+    height: 55px;
+}
+
+.button{
+    color: black;
+    margin-top: 50px;
+    background-color: #cecef3;
+    border: none;
+    border-radius: 25px;
+    width: 30%;
+    height: 45px;
+   
+}

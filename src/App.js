@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.scss';
+import Item from './Component/Item/item';
+import Menu from './Component/Menu/menu';
+import Container from 'react-bootstrap/esm/Container';
+import Formulario from './Component/Formulario/formulario';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu></Menu>
+
+      <Container>
+        {/* Versión móvil */}
+        <div className="mobile-version">
+          <button className="floating-btn"onClick={() => setShowForm(!showForm)}>ADD GOAL</button>
+          <div className={`form-overlay ${showForm ? 'visible' : ''}`}>
+            <div className="form-container">
+              <Formulario></Formulario>
+              <button className="close-btn" onClick={() => setShowForm(false)}>×</button>
+            </div>
+          </div>
+          
+          <div className="items-container">
+            <Item></Item>
+            <Item></Item>
+            <Item></Item>
+            <Item></Item>
+            <Item></Item>
+          </div>
+        </div>
+
+        {/* Versión desktop */}
+        <div className="desktop-version">
+          <Row className="h-100">
+            <Col lg={6} className="sticky-form">
+              <Formulario></Formulario>
+            </Col>
+            <Col lg={6} className="scrollable-items">
+              <Item></Item>
+              <Item></Item>
+              <Item></Item>
+              <Item></Item>
+              <Item></Item>
+            </Col>
+          </Row>
+        </div>
+      </Container>
     </div>
   );
 }
