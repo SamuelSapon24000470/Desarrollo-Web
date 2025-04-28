@@ -25,4 +25,8 @@ Aplicación web para registrar y gestionar metas, creada con React, Bootstrap y 
 ##  Iniciar la aplicacion
 -   npm start
 
+##  Clonar Repositorio
+-  git clone https://github.com/SamuelSapon24000470/Desarrollo-Web.git
+
 Hecho por Samuel Sapón 😊
+
