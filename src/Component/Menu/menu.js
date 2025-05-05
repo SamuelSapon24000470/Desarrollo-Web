@@ -10,8 +10,8 @@ function Menu() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav >
-            <Nav.Link className='textA' href="#home">Task</Nav.Link>
-            <Nav.Link className='textA' href="#link">Goals</Nav.Link>
+            <Nav.Link className='textA' >Task</Nav.Link>
+            <Nav.Link className='textA' >Goals</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

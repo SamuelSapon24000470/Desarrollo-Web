@@ -5,6 +5,7 @@ $secondary: #cecef3;
     position: relative;
     margin: auto;
     background-color: $primary;
+    
     width: 85%;
     margin-top: 35px;
     color: black;
@@ -15,9 +16,14 @@ $secondary: #cecef3;
 .Button {
     background-color: $secondary;
     color: black;
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 25px;
     border: none;
-    width: 95%;
+    width: 35%;
     
 }
 
