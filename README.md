@@ -25,4 +25,3 @@ Aplicación web para registrar y gestionar metas, creada con React, Bootstrap y 
 ##  Iniciar la aplicacion
 -   npm start
 
-Hecho por Samuel Sapón 😊
