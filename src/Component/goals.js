@@ -2,25 +2,27 @@ import List from "./list";
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState} from 'react';
 import {
-    addTodo,
-    selectTodos
-} from '../reducers/todoSlice'
+    addGoal,
+    selectGoals
+} from '../reducers/goalsSlice'
 import { useRef } from "react";
-
-export function Todos(){
+export function Goals(){
     const dispatch = useDispatch();
-    const todos = useSelector(selectTodos);
+    const todos = useSelector(selectGoals);
     const inputRef = useRef();
 
-    const addItem = (e) => {
-        e.preventDefault();
-        console.log(inputRef.current);
-        dispatch(addTodo({'name': inputRef.current.value}))
-    }
+  const addItem = (e) => {
+  e.preventDefault();
+  dispatch(addGoal({
+    name: inputRef.current.value,
+    description: "Descripción predeterminada", // Añade esto
+    dueDate: new Date().toISOString().split('T')[0] // Fecha actual como ejemplo
+  }));
+};
 
     return (
         <div>
-          <h1>Todo List</h1>
+          <h1>Goals List</h1>
           <input type="text" placeholder="Add Todo" ref={inputRef} />
           <button onClick={addItem}>Add Todo</button>
     
@@ -28,4 +30,4 @@ export function Todos(){
         </div>
       );
 }
-export default Todos;
+export default Goals;

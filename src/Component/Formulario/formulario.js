@@ -1,49 +1,50 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './formulario.scss';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../../reducers/todoSlice';
 import { useRef } from 'react';
 
-function Formulario(props) {
+function FormTaskAndGoal({ onSubmit, option }) { // Recibir onSubmit y option como props
 
-  const dispatch = useDispatch();
   const inputRefName = useRef();
-  const inputRefDescripton = useRef();
+  const inputRefDescription = useRef();
   const inputRefDueDate = useRef();
 
   const addItem = (e) => {
     e.preventDefault();
-    
-    dispatch(addTodo({
-      'name': inputRefName.current.value, 
-      'description': inputRefDescripton.current.value,
-      'dueDate': inputRefDueDate.current.value
-    }));
-  }
+    if (inputRefName.current.value && inputRefDescription.current.value && inputRefDueDate.current.value) {
+      const formData = {
+        name: inputRefName.current.value,
+        description: inputRefDescription.current.value,
+        dueDate: inputRefDueDate.current.value
+      };
+      onSubmit(formData); 
+      inputRefDescription.current.value = '';
+      inputRefDueDate.current.value = '';
+    }
+  };
 
   return (
-    <Form className='form'>
+    <Form className='form' onSubmit={addItem}>
       <Form.Group>
         <Form.Label className='text'>Name</Form.Label>
-        <Form.Control className='input' type="text" ref={inputRefName} />
+        <Form.Control className='input' type="text" ref={inputRefName} required />
       </Form.Group>
 
       <Form.Group>
         <Form.Label className='text'>Description</Form.Label>
-        <Form.Control className='inputD' type="text" ref={inputRefDescripton}/>
+        <Form.Control className='inputD' as="textarea" ref={inputRefDescription} required />
       </Form.Group>
 
       <Form.Group>
         <Form.Label className='text'>Due Date</Form.Label>
-        <Form.Control className='input' type="date" ref={inputRefDueDate}/>
+        <Form.Control className='input' type="date" ref={inputRefDueDate} required />
       </Form.Group>
 
-      <Button className='button' type="submit" onClick={addItem}>
-        ADD GOAL
+      <Button variant="info" type="submit">
+        Add {option === 'tasks' ? 'Task' : 'Goal'}
       </Button>
     </Form>
   );
 }
 
-export default Formulario;
+export default FormTaskAndGoal;

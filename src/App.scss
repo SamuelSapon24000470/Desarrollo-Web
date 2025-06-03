@@ -111,6 +111,29 @@
   background: #555;
 }
 
+.tab-buttons {
+    display: flex;
+    margin-bottom: 20px;
+
+    .tab-button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+}
+
 /* Media queries */
 @media (min-width: 992px) {
   .mobile-version {
